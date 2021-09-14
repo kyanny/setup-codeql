@@ -15,6 +15,7 @@ cd struts_9805
 codeql database create ./struts_db \
   -j 0 -l java --command "mvn -B -DskipTests \
   -DskipAssembly"
+mkdir -p java-analysis
 
 for ql in $(find $HOME/codeql-home/codeql-repo/java/ql -type f -name '*.ql');
 do

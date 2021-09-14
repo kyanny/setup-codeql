@@ -19,4 +19,7 @@ cd gojenkins
 
 codeql database create codeql_database --language=go
 mkdir -p codeql-analysis
-codeql database analyze codeql_database ../codeql-go/ql/src/localReferences.ql --format=csv --output=codeql-analysis/go-results.csv
+for ql in $(find $HOME/codeql-home/codeql-go/ql -type f -name '*.ql');
+do
+    codeql database analyze codeql_database $ql --format=csv --output=codeql-analysis/go-results.csv
+done

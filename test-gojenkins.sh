@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export PATH=$HOME/codeql-home/codeql:$PATH
+
 # http://f4bb1t.com/post/2020/12/14/codeql-for-golang-practise1/
 
 cd $HOME

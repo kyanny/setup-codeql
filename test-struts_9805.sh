@@ -8,6 +8,7 @@ export PATH=$HOME/codeql-home/codeql:$PATH
 sudo apt install maven -y
 
 cd $HOME/codeql-home
+rm -rf struts_9805
 git clone https://github.com/m-y-mo/struts_9805
 cd struts_9805
 

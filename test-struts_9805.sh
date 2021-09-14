@@ -17,7 +17,7 @@ codeql database create ./struts_db \
 
 for ql in $(find $HOME/codeql-home/codeql-repo/java/ql -type f -name '*.ql');
 do
-    codeql analyze struts_db \
+    codeql database analyze struts_db \
       $ql \
       --format=csv --output=java-analysis/result.csv
 done

@@ -23,3 +23,8 @@ for ql in $(find $HOME/codeql-home/codeql-go/ql -type f -name '*.ql');
 do
     codeql database analyze codeql_database $ql --format=csv --output=codeql-analysis/go-results.csv
 done
+
+for qls in $(find $HOME/codeql-home/codeql-go/ql -type f -name '*.qls');
+do
+    codeql database analyze codeql_database $qls --format=csv --output=codeql-analysis/go-results.csv
+done

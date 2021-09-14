@@ -13,6 +13,7 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 
 cd $HOME/codeql-home
+rm -rf gojenkins
 git clone https://github.com/bndr/gojenkins
 cd gojenkins
 

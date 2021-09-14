@@ -21,3 +21,10 @@ do
       $ql \
       --format=csv --output=java-analysis/result.csv
 done
+
+for qls in $(find $HOME/codeql-home/codeql-repo/java/ql -type f -name '*.qls');
+do
+    codeql database analyze struts_db \
+      $qls \
+      --format=csv --output=java-analysis/result.csv
+done

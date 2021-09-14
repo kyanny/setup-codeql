@@ -15,6 +15,9 @@ codeql database create ./struts_db \
   -j 0 -l java --command "mvn -B -DskipTests \
   -DskipAssembly"
 
-codeql analyze struts_db \
-  ../codeql-repo/ql/java/ql/src/Security/CWE/CWE-502/UnsafeDeserialization.ql \
-  --format=csv --output=java-analysis/result.csv
+for ql in $(find $HOME/codeql-home/codeql-repo/java/ql -type f -name '*.ql');
+do
+    codeql analyze struts_db \
+      $ql \
+      --format=csv --output=java-analysis/result.csv
+done
